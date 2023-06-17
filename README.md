@@ -7,3 +7,6 @@ IntelliVoiceAI is a simple voice assistant developed using Python. It uses OpenA
 * Text-to-Speech: Converts the assistant's text responses into voice and speaks them out.
 * Reminders: Create reminders in the reminders app
 * To-do-list: Create to do lists in the notes app 
+
+# Contribution
+Feel free to fork this project, make some changes, and submit a pull request. All contributions are welcome!
