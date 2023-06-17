@@ -30,7 +30,7 @@ class VoiceAssistant:
 
     def __init__(self):
         # Set your OpenAI API key
-        openai.api_key = "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"
+        openai.api_key = "your_api_key_here"
         # Initialize the assistant's history
         self.history = [
             {
