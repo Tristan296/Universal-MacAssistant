@@ -16,18 +16,6 @@ mic = sr.Microphone()
 r = sr.Recognizer()
 
 class VoiceAssistant:
-    """
-    This class represents a voice assistant.
-
-    Attributes:
-        history (list): A list of dictionaries representing the assistant's history.
-
-    Methods:
-        listen: Records audio from the user and transcribes it.
-        think: Generates a response to the user's input.
-        speak: Converts text to speech and plays it.
-    """
-
     def __init__(self):
         # Set your OpenAI API key
         openai.api_key = "your_api_key_here"
@@ -96,25 +84,22 @@ def create_reminder_in_app(reminder_text, reminder_datetime):
 
 def set_reminder():
     assistant.speak("What should I remind you about?")
-    reminder = recognize_speech_from_mic(r, mic)
+    reminder = assistant.listen()
 
     assistant.speak("When did you want to be reminded?")
-    reminder_time = recognize_speech_from_mic(r, mic)
+    reminder_time = assistant.listen()
 
     try:
         time_str = reminder_time.lower()  # Convert to lowercase for case insensitivity
         time_str = time_str.replace(".", "")  # Remove periods in the time string
 
-        if "p.m." in time_str or "pm" in time_str:
-            hour, minute = map(int, time_str.split()[0].split(":"))
-            if hour != 12:
+        hour, minute = 0, 0
+        if "pm" in time_str or "am" in time_str:
+            time_parts = time_str.split()
+            time_parts[0] = time_parts[0].replace("am", "").replace("pm", "")
+            hour, minute = map(int, time_parts[0].split(":"))
+            if "pm" in time_str and hour != 12:
                 hour += 12
-        elif "a.m." in time_str or "am" in time_str:
-            hour, minute = map(int, time_str.split()[0].split(":"))
-            if hour == 12:
-                hour = 0
-        else:
-            raise ValueError("Invalid time format")
 
         now = datetime.now()
         reminder_datetime = now.replace(
@@ -134,7 +119,6 @@ def set_reminder():
 
     except ValueError:
         print("Sorry, I couldn't understand the time you provided. Please try again.")
-
 
 def create_todo_list():
     todo_list = []
@@ -192,6 +176,6 @@ if __name__ == "__main__":
         elif "exit" in text.strip().lower() or "quit" in text.strip().lower():
             print("Goodbye")
             break
-        
-        response = assistant.think(text)
-        assistant.speak(response)
+        else:
+            response = assistant.think(text)
+            assistant.speak(response)
