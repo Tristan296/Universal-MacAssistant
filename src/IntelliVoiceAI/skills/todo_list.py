@@ -3,7 +3,7 @@ import time
 import pyautogui
 import platform
 import os
-from voice_assistant import assistant
+from src.IntelliVoiceAI.core.voice_assistant import assistant
 
 class todoList:
     def __init__(self):
