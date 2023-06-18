@@ -15,10 +15,11 @@ IntelliVoiceAI is a simple voice assistant developed using Python. It uses OpenA
 ## Requirements
 ### Install the dependencies 
 ```
-#### Windows and Linux:
+
+# Windows and Linux:
 pip install numpy openai sounddevice scipy gtts
 
-#### MacOS
+# MacOS
 sudo pip3 install numpy openai sounddevice scipy gtts
 
 ```
