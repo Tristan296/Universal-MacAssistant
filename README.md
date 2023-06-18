@@ -1,5 +1,9 @@
 # IntelliVoiceAI
-IntelliVoiceAI is a simple voice assistant developed using Python. It uses OpenAI's GPT-3 API for language understanding and response generation, SoundDevice for recording audio, and gTTS for text-to-speech conversion. IntelliVoiceAI incorporates integration with various applications such as creating reminders in the Reminders app and generating to-do lists in the Notes app.  
+
+A Personal Assistant for Linux, MacOS and Windows
+
+IntelliVoiceAI is a simple voice assistant developed using Python. It uses OpenAI's GPT-3 API for language understanding and response generation, SoundDevice for recording audio, and gTTS for text-to-speech conversion. IntelliVoiceAI incorporates integration with various applications such as creating reminders in the Reminders app and generating to-do lists in the Notes app. 
+
 
 ## Features
 * Voice Recognition: Listens to user's voice commands and transcribes them to text.
@@ -11,8 +15,16 @@ IntelliVoiceAI is a simple voice assistant developed using Python. It uses OpenA
 ## Requirements
 ### Install the dependencies 
 ```
+Windows and Linux:
 pip install numpy openai sounddevice scipy gtts
+
+MacOS
+sudo pip3 install numpy openai sounddevice scipy gtts
+
 ```
 
-# Contribution
+## Usage
+
+
+## Contribution
 Feel free to fork this project, make some changes, and submit a pull request. All contributions are welcome!
