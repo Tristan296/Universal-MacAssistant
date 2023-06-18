@@ -3,21 +3,21 @@ import time
 import pyautogui
 import platform
 import os, sys
-from core.voice_assistant import assistant
+from core.voice_assistant import VoiceAssistant 
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(os.path.dirname(SCRIPT_DIR))
 
 class todoList:
-    def __init__(self):
-        pass
+    def __init__(self, voice_assistant):
+        self.voice_assistant = voice_assistant
     
-    def create_todo_list():
+    def create_todo_list(self):
         todo_list = []
-        assistant.speak("Let's create a to-do list. Please say the tasks one by one. Say 'done' when you're finished.")
+        self.voice_assistant.speak("Let's create a to-do list. Please say the tasks one by one. Say 'done' when you're finished.")
 
         while True:
-            task = assistant.listen()
+            task = self.voice_assistant.listen()
             
             if "done" in task.strip().lower():
                 break
@@ -36,3 +36,8 @@ class todoList:
                 pyautogui.hotkey("return")
             elif platform.system() == "Windows":
                 os.system("notepad")
+                
+if __name__ == "__main__": 
+    voice_assistant = VoiceAssistant()
+    reminder = todoList(voice_assistant)
+    reminder.set_reminder()
