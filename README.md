@@ -8,5 +8,11 @@ IntelliVoiceAI is a simple voice assistant developed using Python. It uses OpenA
 * Reminders: Create reminders in the reminders app
 * To-do-list: Create to do lists in the notes app 
 
+## Requirements
+### Install the dependencies 
+```
+pip install numpy openai sounddevice scipy gtts
+```
+
 # Contribution
 Feel free to fork this project, make some changes, and submit a pull request. All contributions are welcome!
