@@ -13,7 +13,7 @@ sys.path.append(os.path.dirname(SCRIPT_DIR))
 class VoiceAssistant:
     def __init__(self):
         # Set your OpenAI API key
-        openai.api_key = "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"
+        openai.api_key = "your_api_key_here"
         # Initialize the assistant's history
         self.history = [
             {
