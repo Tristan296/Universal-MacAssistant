@@ -2,8 +2,11 @@ import subprocess
 import time 
 import pyautogui
 import platform
-import os
+import os, sys
 from core.voice_assistant import assistant
+
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+sys.path.append(os.path.dirname(SCRIPT_DIR))
 
 class todoList:
     def __init__(self):

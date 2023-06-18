@@ -5,17 +5,20 @@ from scipy.io import wavfile
 import tempfile
 import subprocess
 from gtts import gTTS
+import os, sys
 
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+sys.path.append(os.path.dirname(SCRIPT_DIR))
 
 class VoiceAssistant:
     def __init__(self):
         # Set your OpenAI API key
-        openai.api_key = "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"
+        openai.api_key = "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"
         # Initialize the assistant's history
         self.history = [
             {
                 "role": "system",
-                "content": "You are a helpful assistant. The user is english. Only speak english.",
+                "content": "You are a helpful assistant. The user is English. Only speak English.",
             }
         ]
 
@@ -70,7 +73,23 @@ class VoiceAssistant:
 
     def run(self):
         while True:
-            user_input = self.listen()
-            response = self.think(user_input)
-            self.speak(response)
+            text = self.listen()
+            formattedText = text.strip().lower()
 
+            if "goodbye" in formattedText or "bye" in formattedText:
+                print("Assistant: Goodbye! Have a great day!")
+                self.speak("Goodbye! Have a great day!")
+                break
+
+            if "reminder" in formattedText:
+                from src.skills.reminder import Reminder
+                reminder = Reminder(self)
+                reminder.set_reminder()
+                break
+
+            if "exit" in formattedText or "quit" in formattedText:
+                print("Goodbye")
+                break
+
+            response = self.think(text)
+            self.speak(response)
