@@ -13,7 +13,7 @@ sys.path.append(os.path.dirname(SCRIPT_DIR))
 class VoiceAssistant:
     def __init__(self):
         # Set your OpenAI API key
-        openai.api_key = "your_api_key_here"
+        openai.api_key = "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"
         # Initialize the assistant's history
         self.history = [
             {
@@ -73,6 +73,9 @@ class VoiceAssistant:
 
     def run(self):
         while True:
+            print("""Available commands:\n
+                  - Create a reminder\n
+                  - Create a todo list\n\n""")
             text = self.listen()
             formattedText = text.strip().lower()
 
