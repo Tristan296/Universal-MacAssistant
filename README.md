@@ -25,7 +25,9 @@ sudo pip3 install numpy openai sounddevice scipy gtts
 ```
 
 ## Usage
-
+1. Download Repository folder or git clone https://github.com/Tristan296/IntelliVoiceAI.git
+2. Open terminal and run `python3 main.py`
+3. Choose from the available prompts or talk to ChatGPT
 
 ## Contribution
 Feel free to fork this project, make some changes, and submit a pull request. All contributions are welcome!
