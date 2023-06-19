@@ -10,7 +10,8 @@ IntelliVoiceAI is a simple voice assistant developed using Python. It uses OpenA
 * AI Conversation: Communicates with users in natural language using OpenAI's GPT-3 model.
 * Text-to-Speech: Converts the assistant's text responses into voice and speaks them out.
 * Reminders: Create reminders in the reminders app
-* To-do-list: Create to do lists in the notes app 
+* To-do-list: Create to do lists in the notes app
+* Check internet speed and ping
 
 ## Requirements
 ### Install the dependencies 
@@ -26,8 +27,9 @@ sudo pip3 install numpy openai sounddevice scipy gtts
 
 ## Usage
 1. Download Repository folder or git clone https://github.com/Tristan296/IntelliVoiceAI.git
-2. Open terminal and run `python3 main.py`
-3. Choose from the available prompts or talk to ChatGPT
+2. replace `openai.api_key = "your_api_key_here"` with API key
+3. Open terminal and run `python3 main.py`
+4. Choose from the available prompts or talk to ChatGPT
 
 ## Contribution
 Feel free to fork this project, make some changes, and submit a pull request. All contributions are welcome!
