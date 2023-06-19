@@ -5,6 +5,7 @@ import sys
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(os.path.dirname(SCRIPT_DIR))
 
+from extras.loading_logo import Loader
 from core.voice_assistant import VoiceAssistant
 
 class InternetSpeed:
@@ -12,18 +13,29 @@ class InternetSpeed:
         self.voice_assistant = voice_assistant
       
     def download(self):
-        st = speedtest.Speedtest()
-        self.voice_assistant.speak(st.download())
-    
+        loader = Loader("Testing download...").start()
+        internet = speedtest.Speedtest()
+        download_speed = internet.download()
+        download_mbs = round(download_speed / (10**6), 2)
+        loader.stop()
+        self.voice_assistant.speak(f"Your download speed is {download_mbs} megabits per second.")
+        
     def upload(self):
-        st = speedtest.Speedtest()
-        self.voice_assistant.speak(st.upload())
+        loader = Loader("Testing upload...").start()
+        internet = speedtest.Speedtest()
+        upload_speed = internet.upload()
+        upload_mbs = round(upload_speed / (10**6), 2)
+        loader.stop()
+        self.voice_assistant.speak(f"Your upload speed is {upload_mbs} megabits per second.")
         
     def ping(self):
-        st = speedtest.Speedtest()
-        servernames = []  
-        st.get_servers(servernames)  
-        self.voice_assistant.speak(st.results.ping())
+        loader = Loader("Testing latency...").start()
+        internet = speedtest.Speedtest()
+        servernames = []
+        internet.get_servers(servernames)  
+        ping = internet.results.ping
+        loader.stop()
+        self.voice_assistant.speak(f"Your latency is {ping} milliseconds")
         
     def run(self):
         while True:
