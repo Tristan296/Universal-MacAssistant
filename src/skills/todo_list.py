@@ -3,10 +3,11 @@ import time
 import pyautogui
 import platform
 import os, sys
-from core.voice_assistant import VoiceAssistant 
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(os.path.dirname(SCRIPT_DIR))
+
+from core.voice_assistant import VoiceAssistant 
 
 class todoList:
     def __init__(self, voice_assistant):
@@ -40,4 +41,4 @@ class todoList:
 if __name__ == "__main__": 
     voice_assistant = VoiceAssistant()
     reminder = todoList(voice_assistant)
-    reminder.set_reminder()
+    reminder.create_todo_list()
