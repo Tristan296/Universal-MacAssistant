@@ -12,6 +12,7 @@ IntelliVoiceAI is a simple voice assistant developed using Python. It uses OpenA
 * Reminders: Create reminders in the reminders app
 * To-do-list: Create to do lists in the notes app
 * Check internet speed and ping
+* Check previous internet results
 
 ## Requirements
 ### Install the dependencies 
