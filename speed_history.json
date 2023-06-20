@@ -4,5 +4,41 @@
         "download_speed": 59.99,
         "upload_speed": 0,
         "ping_latency": 0
+    },
+    {
+        "timestamp": "2023-06-21 08:07:58.392995",
+        "download_speed": 63.09,
+        "upload_speed": 0,
+        "ping_latency": 0
+    },
+    {
+        "timestamp": "2023-06-21 08:09:05.597555",
+        "download_speed": 63.19,
+        "upload_speed": 0,
+        "ping_latency": 0
+    },
+    {
+        "timestamp": "2023-06-21 08:09:35.385474",
+        "download_speed": 86.22,
+        "upload_speed": 0,
+        "ping_latency": 0
+    },
+    {
+        "timestamp": "2023-06-21 08:14:52.243935",
+        "download_speed": 83.71,
+        "upload_speed": 0,
+        "ping_latency": 0
+    },
+    {
+        "timestamp": "2023-06-21 08:17:50.621994",
+        "download_speed": 94.81,
+        "upload_speed": 0,
+        "ping_latency": 0
+    },
+    {
+        "timestamp": "2023-06-21 08:20:30.176868",
+        "download_speed": 98.79,
+        "upload_speed": 0,
+        "ping_latency": 0
     }
 ]

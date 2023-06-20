@@ -13,7 +13,7 @@ sys.path.append(os.path.dirname(SCRIPT_DIR))
 class VoiceAssistant:
     def __init__(self):
         # Set your OpenAI API key
-        openai.api_key = "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"
+        openai.api_key = "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"
         # Initialize the assistant's history
         self.history = [
             {
@@ -73,10 +73,9 @@ class VoiceAssistant:
 
     def run(self):
         while True:
-            print("""Available commands:\n
-                  - Create a reminder\n
-                  - Create a todo list\n\n
-                  - Check internet speed stats""")
+            print("""Initialising ChatGPT and Text-To-Speech...\n""")
+            print("Welcome to IntelliVoiceAI! How can I assist you? If unsure say help")
+
             text = self.listen()
             formattedText = text.strip().lower()
 
@@ -98,10 +97,12 @@ class VoiceAssistant:
                 break
 
             if "speed" in formattedText or "internet speed" in formattedText: 
-                from src.skills.internet_test import InternetSpeed
-                speed = InternetSpeed(self)
+                from src.skills.internet_test import InternetSpeed, SpeedHistory
+                history_file_path = "speed_history.json"
+                speed_history = SpeedHistory(history_file_path)
+                speed = InternetSpeed(self, speed_history)
                 speed.run()
-                
+                            
             if "exit" in formattedText or "quit" in formattedText:
                 print("Goodbye")
                 break

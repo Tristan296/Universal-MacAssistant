@@ -23,9 +23,9 @@ class InternetSpeed:
         download_speed = internet.download()
         download_mbs = round(download_speed / (10**6), 2)
         loader.stop()
-        self.voice_assistant.speak(
-            f"Your download speed is {download_mbs} megabits per second."
-        )
+        output = f"Your download speed is {download_mbs} megabits per second."
+        print(output)
+        self.voice_assistant.speak(output)
         result = SpeedResult(datetime.datetime.now(), download_mbs, 0, 0)
         self.speed_history.add_result(result)
 
@@ -35,9 +35,9 @@ class InternetSpeed:
         upload_speed = internet.upload()
         upload_mbs = round(upload_speed / (10**6), 2)
         loader.stop()
-        self.voice_assistant.speak(
-            f"Your upload speed is {upload_mbs} megabits per second."
-        )
+        output = f"Your upload speed is {upload_mbs} megabits per second."
+        print(output)
+        self.voice_assistant.speak(output)
         result = SpeedResult(datetime.datetime.now(), 0, upload_mbs, 0)
         self.speed_history.add_result(result)
 
@@ -48,15 +48,17 @@ class InternetSpeed:
         internet.get_servers(servernames)
         ping = internet.results.ping
         loader.stop()
-        self.voice_assistant.speak(f"Your latency is {ping} milliseconds")
+        output = f"Your latency is {ping} milliseconds."
+        print(output)
+        self.voice_assistant.speak(output)
         result = SpeedResult(datetime.datetime.now(), 0, 0, ping)
         self.speed_history.add_result(result)
 
     def run(self):
         while True:
-            self.voice_assistant.speak(
-                "Do you want to check your latency, download speed, or upload speed? You can also review your past speed test results."
-            )
+            prompt =  "Do you want to check your latency, download speed, upload speed or view past results?"
+            print(prompt)
+            self.voice_assistant.speak(prompt)
             choice = self.voice_assistant.listen().lower()
             if "download" in choice:
                 self.download()
