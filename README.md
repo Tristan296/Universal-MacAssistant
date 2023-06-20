@@ -6,13 +6,13 @@ IntelliVoiceAI is a simple voice assistant developed using Python. It uses OpenA
 
 
 ## Features
-* Voice Recognition: Listens to user's voice commands and transcribes them to text.
-* AI Conversation: Communicates with users in natural language using OpenAI's GPT-3 model.
-* Text-to-Speech: Converts the assistant's text responses into voice and speaks them out.
-* Reminders: Create reminders in the reminders app
-* To-do-list: Create to do lists in the notes app
-* Check internet speed and ping
-* Check previous internet results
+* **Voice Recognition**: Listens to user's voice commands and transcribes them to text.
+* **AI Conversation**: Communicates with users in natural language using OpenAI's GPT-3 model.
+* **Text-to-Speech**: Converts the assistant's text responses into voice and speaks them out.
+* **Reminders**: Create reminders in the reminders app
+* **To-do-list**: Create to do lists in the notes app
+* **Internet Statistics**: Check internet speed and ping
+* **Internet History**: Check previous internet results
 
 ## Requirements
 ### Install the dependencies 
