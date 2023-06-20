@@ -34,7 +34,8 @@ sudo pip3 install numpy openai sounddevice scipy gtts
 
 The way the default prompt works is that if the user says something that starts with the trigger words, IntelliVoiceAI will act as an Assistant to perform various functions. If the user says something that does not contain the trigger words, IntelliVoiceAI will act as a normal instance of ChatGPT.
 
-![Screen Recording 2023-06-21 at 8 19 46 am](https://github.com/Tristan296/IntelliVoiceAI/assets/109927879/86680078-e9eb-480d-bd61-89946f23b201)
+![Screen-Recording-2023-06-21-at-8](https://github.com/Tristan296/IntelliVoiceAI/assets/109927879/8d2d36b4-0e99-4ad5-ab27-86dd6bcc6b45)
+
 
 ## Contribution
 Feel free to fork this project, make some changes, and submit a pull request. All contributions are welcome!
