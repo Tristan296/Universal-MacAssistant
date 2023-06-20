@@ -6,12 +6,13 @@ IntelliVoiceAI is a simple voice assistant developed using Python. It uses OpenA
 
 
 ## Features
-* Voice Recognition: Listens to user's voice commands and transcribes them to text.
-* AI Conversation: Communicates with users in natural language using OpenAI's GPT-3 model.
-* Text-to-Speech: Converts the assistant's text responses into voice and speaks them out.
-* Reminders: Create reminders in the reminders app
-* To-do-list: Create to do lists in the notes app
-* Check internet speed and ping
+* **Voice Recognition**: Listens to user's voice commands and transcribes them to text.
+* **AI Conversation**: Communicates with users in natural language using OpenAI's GPT-3 model.
+* **Text-to-Speech**: Converts the assistant's text responses into voice and speaks them out.
+* **Reminders**: Create reminders in the reminders app
+* **To-do-list**: Create to do lists in the notes app
+* **Internet Statistics**: Check internet speed and ping
+* **Internet History**: Check previous internet results
 
 ## Requirements
 ### Install the dependencies 
@@ -30,6 +31,11 @@ sudo pip3 install numpy openai sounddevice scipy gtts
 2. replace `openai.api_key = "your_api_key_here"` with API key
 3. Open terminal and run `python3 main.py`
 4. Choose from the available prompts or talk to ChatGPT
+
+The way the default prompt works is that if the user says something that starts with the trigger words, IntelliVoiceAI will act as an Assistant to perform various functions. If the user says something that does not contain the trigger words, IntelliVoiceAI will act as a normal instance of ChatGPT.
+
+![Screen-Recording-2023-06-21-at-8](https://github.com/Tristan296/IntelliVoiceAI/assets/109927879/8d2d36b4-0e99-4ad5-ab27-86dd6bcc6b45)
+
 
 ## Contribution
 Feel free to fork this project, make some changes, and submit a pull request. All contributions are welcome!
