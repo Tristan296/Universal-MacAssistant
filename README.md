@@ -39,3 +39,6 @@ The way the default prompt works is that if the user says something that starts 
 
 ## Contribution
 Feel free to fork this project, make some changes, and submit a pull request. All contributions are welcome!
+
+## License
+This project is licensed under the MIT License - see the LICENSE file for details.
