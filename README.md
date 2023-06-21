@@ -1,4 +1,4 @@
-# IntelliVoiceAI
+# WhisperGPT-Assistant
 
 A Personal Assistant for Linux, MacOS and Windows
 
