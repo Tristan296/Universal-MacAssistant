@@ -32,7 +32,7 @@ sudo pip3 install numpy openai sounddevice scipy gtts
 3. Open terminal and run `python3 main.py`
 4. Choose from the available prompts or talk to ChatGPT
 
-The way the default prompt works is that if the user says something that starts with the trigger words, IntelliVoiceAI will act as an Assistant to perform various functions. If the user says something that does not contain the trigger words, IntelliVoiceAI will act as a normal instance of ChatGPT.
+The way the default prompt works is that if the user says something that starts with the trigger words, WhisperGPT-Assistant will act as an Assistant to perform various functions. If the user says something that does not contain the trigger words, the assistant will act as a normal instance of ChatGPT.
 
 ![Screen-Recording-2023-06-21-at-8](https://github.com/Tristan296/IntelliVoiceAI/assets/109927879/8d2d36b4-0e99-4ad5-ab27-86dd6bcc6b45)
 
