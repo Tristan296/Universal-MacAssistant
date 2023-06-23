@@ -77,8 +77,8 @@ class Weather:
         return chosen_city
 
     def find_weather(self, city_name):
-        api_key = "73e9748c0e68dc34e3ae90236f82d642"
-        url = f"http://api.openweathermap.org/data/2.5/weather?q={city_name}&appid={api_key}"
+        openweather_api_key = "API_key_here"
+        url = f"http://api.openweathermap.org/data/2.5/weather?q={city_name}&appid={openweather_api_key}"
 
         try:
             # JSON HTTP Request
