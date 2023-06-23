@@ -13,6 +13,7 @@ IntelliVoiceGPT is a simple voice assistant developed using Python. It uses Open
 * **To-do-list**: Create to do lists in the notes app
 * **Internet Statistics**: Check internet speed and ping
 * **Internet History**: Check previous internet results
+* **Weather**: Get several weather metrics in chosen city
 
 ## Requirements
 ### Install the dependencies 
@@ -31,6 +32,11 @@ sudo pip3 install numpy openai sounddevice scipy gtts
 2. replace `openai.api_key = "your_api_key_here"` with API key
 3. Open terminal and run `python3 main.py`
 4. Choose from the available prompts or talk to ChatGPT
+
+### NOTE: Using the Weather function (OpenWeather API):
+1. Create an account https://home.openweathermap.org/users/sign_in
+2. Visit https://home.openweathermap.org/api_keys and generate an API key
+3. Copy key and add your unique key```openweather_api_key = "API_key_here"```
 
 The way the default prompt works is that if the user says something that starts with the trigger words, IntelliVoiceGPT will act as an Assistant to perform various functions. If the user says something that does not contain the trigger words, the assistant will act as a normal instance of ChatGPT.
 
