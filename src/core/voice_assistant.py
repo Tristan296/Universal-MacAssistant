@@ -62,7 +62,7 @@ class VoiceAssistant:
 
     def speak(self, text):
          # Convert text to speech using gTTS
-        tts = gTTS(text=text, lang='en')
+        tts = gTTS(text=text, lang='en', slow=False)
         
         # Save the speech as a temporary audio file
         with tempfile.NamedTemporaryFile(delete=False, suffix=".mp3") as temp_audio:
@@ -103,6 +103,8 @@ class VoiceAssistant:
                 speed = InternetSpeed(self, speed_history)
                 speed.run()
                             
+            if "weather" in formattedText:
+                from src.skills.weather import Weather
             if "exit" in formattedText or "quit" in formattedText:
                 print("Goodbye")
                 break

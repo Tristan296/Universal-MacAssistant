@@ -2,5 +2,6 @@
     "python.analysis.extraPaths": [
         "./src/skills",
         "./src/core"
-    ]
+    ],
+    "python.analysis.typeCheckingMode": "basic"
 }
