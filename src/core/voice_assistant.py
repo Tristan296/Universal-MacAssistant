@@ -6,14 +6,23 @@ import tempfile
 import subprocess
 from gtts import gTTS
 import os, sys
+from langchain.agents import initialize_agent
+from langchain.llms import OpenAI
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(os.path.dirname(SCRIPT_DIR))
 
+from core.commands import (computer_applescript_action,
+            chrome_open_url,
+            chrome_get_the_links_on_the_page,
+            chrome_read_the_page,
+            chrome_click_on_link)
 class VoiceAssistant:
     def __init__(self):
         # Set your OpenAI API key
-        openai.api_key = "your_api_key_here"
+        api_key = "your_api_key_here"
+        
+        openai.api_key = api_key
         # Initialize the assistant's history
         self.history = [
             {
@@ -21,6 +30,15 @@ class VoiceAssistant:
                 "content": "You are a helpful assistant. The user is English. Only speak English.",
             }
         ]
+        llm = OpenAI(temperature=0, openai_api_key=api_key, client="", model="") 
+        tools = [
+            computer_applescript_action,
+            chrome_open_url,
+            chrome_get_the_links_on_the_page,
+            chrome_read_the_page,
+            chrome_click_on_link,
+        ]
+        self.agent = initialize_agent(tools, llm, initialize_agent="zero-shot-react-description", verbose=True)
 
     def listen(self):
         """
@@ -28,7 +46,7 @@ class VoiceAssistant:
         """
         print("Listening...")
         # Record the audio
-        duration = 3  # Record for 3 seconds
+        duration = 5  # Record for 3 seconds
         fs = 44100  # Sample rate
 
         audio = sd.rec(int(duration * fs), samplerate=fs, channels=1, dtype=np.int16)
@@ -50,15 +68,21 @@ class VoiceAssistant:
         """
         # Add the user's input to the assistant's history
         self.history.append({"role": "user", "content": text})
-        # Send the conversation to the GPT API
-        response = openai.ChatCompletion.create(
-            model="gpt-3.5-turbo", messages=self.history, temperature=0.5
-        )
-        # Extract the assistant's response from the API response
-        message = dict(response.choices[0])["message"]["content"]
+
+        # Use the agent to generate a response
+        response = self.agent.run(text)
+
+        if isinstance(response, str):
+            # Handle the case when the response is a string
+            message = response
+        else:
+            # Extract the assistant's response from the agent output
+            message = response["content"]
+
         self.history.append({"role": "system", "content": message})
-        print("Assistant: ", message)
+        print("Assistant:", message)
         return message
+
 
     def speak(self, text):
          # Convert text to speech using gTTS
@@ -90,11 +114,6 @@ class VoiceAssistant:
                 todolist.create_todo_list()
                 break
                 
-            if "reminder" in formattedText:
-                from src.skills.reminder import Reminder
-                reminder = Reminder(self)
-                reminder.set_reminder()
-                break
 
             if "speed" in formattedText or "internet speed" in formattedText: 
                 from src.skills.internet_test import InternetSpeed, SpeedHistory
