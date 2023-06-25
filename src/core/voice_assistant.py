@@ -8,6 +8,7 @@ from gtts import gTTS
 import os, sys
 from langchain.agents import initialize_agent
 from langchain.llms import OpenAI
+from dotenv import load_dotenv
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(os.path.dirname(SCRIPT_DIR))
@@ -17,12 +18,13 @@ from core.commands import (computer_applescript_action,
             chrome_get_the_links_on_the_page,
             chrome_read_the_page,
             chrome_click_on_link)
+ 
+# load environment variables
+load_dotenv()
 class VoiceAssistant:
     def __init__(self):
         # Set your OpenAI API key
-        api_key = "your_api_key_here"
-        
-        openai.api_key = api_key
+        openai.api_key = os.environ['OPENAI_API_KEY']
         # Initialize the assistant's history
         self.history = [
             {
@@ -30,7 +32,7 @@ class VoiceAssistant:
                 "content": "You are a helpful assistant. The user is English. Only speak English.",
             }
         ]
-        llm = OpenAI(temperature=0, openai_api_key=api_key, client="", model="") 
+        llm = OpenAI(temperature=0, client="", model="") 
         tools = [
             computer_applescript_action,
             chrome_open_url,
