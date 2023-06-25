@@ -7,6 +7,7 @@ IntelliVoiceGPT converts your audio input to text using OpenAI's Whisper. Then, 
 <a href="https://github.com/chidiwilliams/GPT-Automator">Original Project</a>
 
 ## Features
+
 * **Voice Recognition**: Listens to user's voice commands and transcribes them to text.
 * **AI Conversation**: Communicates with users in natural language using OpenAI's GPT-3 model.
 * **Text-to-Speech**: Converts the assistant's text responses into voice and speaks them out.
@@ -17,13 +18,18 @@ IntelliVoiceGPT converts your audio input to text using OpenAI's Whisper. Then, 
 * **Weather**: Get several weather metrics in chosen city
 
 ## Usage
+
 1. Download Repository folder or git clone https://github.com/Tristan296/IntelliVoiceGPT
 2. run `python setup.py install` in terminal
 3. replace `api_key = "your_api_key_here"` with API key
 4. Open terminal and run `python3 main.py`
 5. Choose from the available prompts or talk to ChatGPT
 
-The way the default prompt works is that if the user says something that starts with the trigger words, IntelliVoiceGPT will act as an Assistant to perform various functions. If the user says something that does not contain the trigger words, the assistant will ask LangChain agent to handle user commands. 
+
+## Example Prompts:
+
+- Find the result of a calculation. Prompt: "What is 5 * 5?" -> It will write AppleScript to open up a calculator and type in 5 * 5.
+- Find restaurants nearby. Prompt: "Find restaurants near me" -> It will open up Google search, read the text on the page, and say the best restaurants.
 
 ## Video Example
 https://github.com/Tristan296/IntelliVoiceGPT/assets/109927879/8878e476-83a5-4a6c-8c65-63289f3c1c5a
