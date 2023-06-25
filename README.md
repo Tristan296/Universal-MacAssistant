@@ -14,23 +14,12 @@ IntelliVoiceGPT converts your audio input to text using OpenAI's Whisper. Then, 
 * **Internet History**: Check previous internet results
 * **Weather**: Get several weather metrics in chosen city
 
-## Requirements
-### Install the dependencies 
-```
-
-# Windows and Linux:
-pip install numpy openai sounddevice scipy gtts
-
-# MacOS
-sudo pip3 install numpy openai sounddevice scipy gtts
-
-```
-
 ## Usage
 1. Download Repository folder or git clone https://github.com/Tristan296/IntelliVoiceGPT
-2. replace `openai.api_key = "your_api_key_here"` with API key
-3. Open terminal and run `python3 main.py`
-4. Choose from the available prompts or talk to ChatGPT
+2. run `python setup.py install` in terminal
+3. replace `api_key = "your_api_key_here"` with API key
+4. Open terminal and run `python3 main.py`
+5. Choose from the available prompts or talk to ChatGPT
 
 The way the default prompt works is that if the user says something that starts with the trigger words, IntelliVoiceGPT will act as an Assistant to perform various functions. If the user says something that does not contain the trigger words, the assistant will ask LangChain agent to handle user commands. 
 
