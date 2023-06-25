@@ -8,7 +8,6 @@ IntelliVoiceGPT is a simple voice assistant developed using Python. It uses Open
 ## Features
 * **Voice Recognition**: Listens to user's voice commands and transcribes them to text.
 * **AI Conversation**: Communicates with users in natural language using OpenAI's GPT-3 model.
-* 
 * **Text-to-Speech**: Converts the assistant's text responses into voice and speaks them out.
 * **Reminders**: Create reminders in the reminders app
 * **To-do-list**: Create to do lists in the notes app
@@ -34,19 +33,18 @@ sudo pip3 install numpy openai sounddevice scipy gtts
 3. Open terminal and run `python3 main.py`
 4. Choose from the available prompts or talk to ChatGPT
 
-### NOTE: Using the Weather function (OpenWeather API):
-1. Create an account https://home.openweathermap.org/users/sign_in
-2. Visit https://home.openweathermap.org/api_keys and generate an API key
-3. Copy key and add your unique key```openweather_api_key = "API_key_here"```
-
 The way the default prompt works is that if the user says something that starts with the trigger words, IntelliVoiceGPT will act as an Assistant to perform various functions. If the user says something that does not contain the trigger words, the assistant will ask LangChain agent to handle user commands. 
 
-
+## Video Example
 https://github.com/Tristan296/IntelliVoiceGPT/assets/109927879/8878e476-83a5-4a6c-8c65-63289f3c1c5a
-
 
 ## Contribution
 Feel free to fork this project, make some changes, and submit a pull request. All contributions are welcome!
+
+## TODO:
+[] Integrate File system tools in MacOS
+[] OpenWeatherMap API Integration with LangChain
+[] Shell Tool
 
 ## License
 This project is licensed under the MIT License - see the LICENSE file for details.
