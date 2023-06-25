@@ -42,9 +42,9 @@ https://github.com/Tristan296/IntelliVoiceGPT/assets/109927879/8878e476-83a5-4a6
 Feel free to fork this project, make some changes, and submit a pull request. All contributions are welcome!
 
 ## TODO:
-[] Integrate File system tools in MacOS
-[] OpenWeatherMap API Integration with LangChain
-[] Shell Tool
+[ ] Integrate File system tools in MacOS
+[ ] OpenWeatherMap API Integration with LangChain
+[ ] Shell Tool
 
 ## License
 This project is licensed under the MIT License - see the LICENSE file for details.
