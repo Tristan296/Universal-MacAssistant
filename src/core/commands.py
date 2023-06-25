@@ -37,6 +37,7 @@ def computer_applescript_action(apple_script):
     Write the AppleScript for the Command:
     Command: 
     """
+
     print("Running\n", apple_script)
 
     return run_applescript(apple_script)

@@ -24,7 +24,8 @@ load_dotenv()
 class VoiceAssistant:
     def __init__(self):
         # Set your OpenAI API key
-        openai.api_key = os.environ['OPENAI_API_KEY']
+        api_key = os.environ['OPENAI_API_KEY']
+        openai.api_key = api_key
         # Initialize the assistant's history
         self.history = [
             {
@@ -32,7 +33,7 @@ class VoiceAssistant:
                 "content": "You are a helpful assistant. The user is English. Only speak English.",
             }
         ]
-        llm = OpenAI(temperature=0, client="", model="") 
+        llm = OpenAI(temperature=0, openai_api_key=api_key) # type: ignore
         tools = [
             computer_applescript_action,
             chrome_open_url,
