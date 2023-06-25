@@ -9,11 +9,8 @@ IntelliVoiceGPT converts your audio input to text using OpenAI's Whisper. Then, 
 ## Features
 
 * **Voice Recognition**: Listens to user's voice commands and transcribes them to text.
-<<<<<<< HEAD
 * **LangChain Chaining:** 'Chunks' user input into a new question which can be solved with tools and agents.
-=======
 * **AI Commands**: Uses LLM to segment voice commands into separate prompts, which then get executed by agent.py
->>>>>>> c499f526089f1262e6d10a7ca4eedecf7892c85a
 * **Text-to-Speech**: Converts the assistant's text responses into voice and speaks them out.
 * **Reminders**: Create reminders in the reminders app
 * **To-do-list**: Create to do lists in the notes app
