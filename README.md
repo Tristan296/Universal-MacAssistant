@@ -2,7 +2,7 @@
 
 A Personal Assistant for Linux, MacOS and Windows
 
-IntelliVoiceGPT is an advanced voice assistant developed using Python. It uses LangChain's OpenAI LLM and chaining to separate a question into sub questions and uses agents and tools to carry out operations. SoundDevice is used for recording audio, and gTTS for text-to-speech conversion. 
+IntelliVoiceGPT converts your audio input to text using OpenAI's Whisper. Then, it uses a LangChain Agent to choose a set of actions, including generating AppleScript (for desktop automation) and JavaScript (for browser automation) commands from your prompt using OpenAI's GPT-3 ("text-davinci-003"), and then executing the resulting script. It then uses Google Text-To-Speech (GTTS) to convert text to audio.
 
 ## Features
 * **Voice Recognition**: Listens to user's voice commands and transcribes them to text.
