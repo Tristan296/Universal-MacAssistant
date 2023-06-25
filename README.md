@@ -43,7 +43,7 @@ Feel free to fork this project, make some changes, and submit a pull request. Al
 
 - [ ] Integrate File system tools in MacOS
 - [ ] OpenWeatherMap API Integration with LangChain
-- [ ] Shell Tool
+- [ ] Create more AppleScripts
 
 ## License
 
