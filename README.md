@@ -2,8 +2,7 @@
 
 A Personal Assistant for Linux, MacOS and Windows
 
-IntelliVoiceGPT is a simple voice assistant developed using Python. It uses OpenAI's GPT-3 API for language understanding and response generation, SoundDevice for recording audio, and gTTS for text-to-speech conversion. IntelliVoiceAI incorporates integration with various applications such as creating reminders in the Reminders app and generating to-do lists in the Notes app. 
-
+IntelliVoiceGPT converts your audio input to text using OpenAI's Whisper. Then, it uses a LangChain Agent to choose a set of actions, including generating AppleScript (for desktop automation) and JavaScript (for browser automation) commands from your prompt using OpenAI's GPT-3 ("text-davinci-003"), and then executing the resulting script. It then uses Google Text-To-Speech (GTTS) to convert text to audio.
 
 ## Features
 * **Voice Recognition**: Listens to user's voice commands and transcribes them to text.
@@ -33,18 +32,18 @@ sudo pip3 install numpy openai sounddevice scipy gtts
 3. Open terminal and run `python3 main.py`
 4. Choose from the available prompts or talk to ChatGPT
 
-### NOTE: Using the Weather function (OpenWeather API):
-1. Create an account https://home.openweathermap.org/users/sign_in
-2. Visit https://home.openweathermap.org/api_keys and generate an API key
-3. Copy key and add your unique key```openweather_api_key = "API_key_here"```
+The way the default prompt works is that if the user says something that starts with the trigger words, IntelliVoiceGPT will act as an Assistant to perform various functions. If the user says something that does not contain the trigger words, the assistant will ask LangChain agent to handle user commands. 
 
-The way the default prompt works is that if the user says something that starts with the trigger words, IntelliVoiceGPT will act as an Assistant to perform various functions. If the user says something that does not contain the trigger words, the assistant will act as a normal instance of ChatGPT.
-
-![Screen-Recording-2023-06-21-at-8](https://github.com/Tristan296/IntelliVoiceAI/assets/109927879/8d2d36b4-0e99-4ad5-ab27-86dd6bcc6b45)
-
+## Video Example
+https://github.com/Tristan296/IntelliVoiceGPT/assets/109927879/8878e476-83a5-4a6c-8c65-63289f3c1c5a
 
 ## Contribution
 Feel free to fork this project, make some changes, and submit a pull request. All contributions are welcome!
+
+## TODO:
+- [ ] Integrate File system tools in MacOS
+- [ ] OpenWeatherMap API Integration with LangChain
+- [ ] Shell Tool
 
 ## License
 This project is licensed under the MIT License - see the LICENSE file for details.
