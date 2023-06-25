@@ -2,8 +2,7 @@
 
 A Personal Assistant for Linux, MacOS and Windows
 
-IntelliVoiceGPT is a simple voice assistant developed using Python. It uses OpenAI's GPT-3 API for language understanding and response generation, SoundDevice for recording audio, and gTTS for text-to-speech conversion. IntelliVoiceAI incorporates integration with various applications such as creating reminders in the Reminders app and generating to-do lists in the Notes app. 
-
+IntelliVoiceGPT is an advanced voice assistant developed using Python. It uses LangChain's OpenAI LLM and chaining to separate a question into sub questions and uses agents and tools to carry out operations. SoundDevice is used for recording audio, and gTTS for text-to-speech conversion. 
 
 ## Features
 * **Voice Recognition**: Listens to user's voice commands and transcribes them to text.
