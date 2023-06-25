@@ -1,0 +1,9 @@
+LICENSE
+README.md
+setup.py
+IntelliVoiceGPT.egg-info/PKG-INFO
+IntelliVoiceGPT.egg-info/SOURCES.txt
+IntelliVoiceGPT.egg-info/dependency_links.txt
+IntelliVoiceGPT.egg-info/requires.txt
+IntelliVoiceGPT.egg-info/top_level.txt
+src/__init__.py
