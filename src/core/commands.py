@@ -42,6 +42,7 @@ def computer_applescript_action(apple_script):
 
     return run_applescript(apple_script)
 
+
 @tool
 def chrome_get_the_links_on_the_page(input):
     """
@@ -138,6 +139,7 @@ def run_applescript(applescript):
     decoded_text = stdout.decode("utf-8")
 
     return decoded_text
+
 
 
 def say_text(text):

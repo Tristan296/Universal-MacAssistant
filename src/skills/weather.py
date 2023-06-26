@@ -1,12 +1,15 @@
 import requests
 import os
 import sys
+from dotenv import load_dotenv
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(os.path.dirname(SCRIPT_DIR))
 
 from extras.loading_logo import Loader
 from core.voice_assistant import VoiceAssistant
+
+load_dotenv()
 
 class Weather:
     def __init__(self, voice_assistant, choice):
@@ -77,7 +80,7 @@ class Weather:
         return chosen_city
 
     def find_weather(self, city_name):
-        openweather_api_key = "73e9748c0e68dc34e3ae90236f82d642"
+        openweather_api_key = os.environ["OPENWEATHER_API_KEY"]
         url = f"http://api.openweathermap.org/data/2.5/weather?q={city_name}&appid={openweather_api_key}"
 
         try:

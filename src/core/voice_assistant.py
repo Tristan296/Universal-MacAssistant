@@ -9,6 +9,7 @@ import os, sys
 from langchain.agents import initialize_agent
 from langchain.llms import OpenAI
 from dotenv import load_dotenv
+from langchain.agents import load_tools
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(os.path.dirname(SCRIPT_DIR))
@@ -18,7 +19,7 @@ from core.commands import (computer_applescript_action,
             chrome_get_the_links_on_the_page,
             chrome_read_the_page,
             chrome_click_on_link)
- 
+
 # load environment variables
 load_dotenv()
 class VoiceAssistant:
@@ -33,13 +34,13 @@ class VoiceAssistant:
                 "content": "You are a helpful assistant. The user is English. Only speak English.",
             }
         ]
-        llm = OpenAI(temperature=0, openai_api_key=api_key) # type: ignore
+        llm = OpenAI(temperature=0, openai_api_key=api_key) # type: ignore 
         tools = [
             computer_applescript_action,
             chrome_open_url,
             chrome_get_the_links_on_the_page,
             chrome_read_the_page,
-            chrome_click_on_link,
+            chrome_click_on_link
         ]
         self.agent = initialize_agent(tools, llm, initialize_agent="zero-shot-react-description", verbose=True)
 
@@ -55,7 +56,7 @@ class VoiceAssistant:
         audio = sd.rec(int(duration * fs), samplerate=fs, channels=1, dtype=np.int16)
         sd.wait()
 
-        # Save the NumPy array to a temporary wav file
+        # # Save the NumPy array to a temporary wav file
         with tempfile.NamedTemporaryFile(delete=False, suffix=".wav") as temp_wav_file:
             wavfile.write(temp_wav_file.name, fs, audio)
 
@@ -63,7 +64,7 @@ class VoiceAssistant:
             transcript = openai.Audio.transcribe("whisper-1", temp_wav_file)
 
         print(f"User: {transcript['text']}")
-        return transcript["text"]
+        return transcript['text']
 
     def think(self, text):
         """
@@ -116,7 +117,6 @@ class VoiceAssistant:
                 todolist = todoList(self)
                 todolist.create_todo_list()
                 break
-                
 
             if "speed" in formattedText or "internet speed" in formattedText: 
                 from src.skills.internet_test import InternetSpeed, SpeedHistory
