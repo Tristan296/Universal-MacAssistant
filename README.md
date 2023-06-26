@@ -22,9 +22,16 @@ IntelliVoiceGPT converts your audio input to text using OpenAI's Whisper. Then, 
 
 1. Download Repository folder or git clone https://github.com/Tristan296/IntelliVoiceGPT
 2. run `python setup.py install` in terminal
-3. In `.env` file add your OPENAI api key: OPENAI_API_KEY=your_key_here
+3. In `.env` file add your OPENAI api key: `OPENAI_API_KEY=your_key_here` 
 4. Open terminal and run `python3 main.py`
 5. Choose from the available prompts or talk to ChatGPT
+
+## Additional Features:
+
+### OpenWeatherMap API:
+- Create an openweather acccount and generate an api key
+- in `.env` add api key to:
+- `OPENWEATHER_API_KEY=your_key_here`
 
 ## Example Prompts:
 
@@ -42,7 +49,6 @@ Feel free to fork this project, make some changes, and submit a pull request. Al
 ## TODO:
 
 - [ ] Integrate File system tools in MacOS
-- [ ] OpenWeatherMap API Integration with LangChain
 - [ ] Create more AppleScripts
 
 ## License
