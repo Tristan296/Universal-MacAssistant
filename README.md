@@ -4,8 +4,6 @@ A Personal Assistant for Linux, MacOS and Windows
 
 IntelliVoiceGPT converts your audio input to text using OpenAI's Whisper. Then, it uses a LangChain Agent to choose a set of actions, including generating AppleScript (for desktop automation) and JavaScript (for browser automation) commands from your prompt using OpenAI's GPT-3 ("text-davinci-003"), and then executing the resulting script. It then uses Google Text-To-Speech (GTTS) to convert text to audio.
 
-<a href="https://github.com/chidiwilliams/GPT-Automator">Original Project</a>
-
 ## Features
 
 * **Voice Recognition**: Listens to user's voice commands and transcribes them to text.
