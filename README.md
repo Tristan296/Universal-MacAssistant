@@ -38,6 +38,9 @@ LangchainGPT converts your audio input to text using OpenAI's Whisper. Then, it 
 
 https://github.com/Tristan296/LangchainGPT/assets/109927879/8878e476-83a5-4a6c-8c65-63289f3c1c5a
 
+## Current Limitations:
+- Prompts to OpenAI are very expensive.
+
 ## Contribution
 
 Feel free to fork this project, make some changes, and submit a pull request. All contributions are welcome!
