@@ -1,6 +1,6 @@
 # LangChain GPT VoiceAssistant for MacOS
 
-LangchainGPT converts your audio input to text using OpenAI's Whisper. Then, it uses a LangChain Agent to choose a set of actions, including generating AppleScript (for desktop automation) and JavaScript (for browser automation) commands from your prompt using OpenAI's GPT-3 ("text-davinci-003"), and then executing the resulting script. It then uses Google Text-To-Speech (GTTS) to convert text to audio.
+![ChatGPT-1280x720](https://github.com/Tristan296/LangChain-GPT-Voice-Assistant/assets/109927879/84517b51-4941-4ab4-b286-276ccf1c65ba)
 
 ## Features
 
@@ -13,6 +13,10 @@ LangchainGPT converts your audio input to text using OpenAI's Whisper. Then, it 
 * **Internet Statistics**: Check internet speed and ping
 * **Internet History**: Check previous internet results
 * **Weather**: Get several weather metrics in chosen city
+
+## How it works:
+
+- LangchainGPT converts your audio input to text using OpenAI's Whisper. Then, it uses a LangChain Agent to choose a set of actions, including generating AppleScript (for desktop automation) and JavaScript (for browser automation) commands from your prompt using OpenAI's GPT-3 ("text-davinci-003"), and then executing the resulting script. It then uses Google Text-To-Speech (GTTS) to convert text to audio.
 
 ## Usage
 
