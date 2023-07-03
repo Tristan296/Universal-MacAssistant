@@ -54,6 +54,10 @@ Feel free to fork this project, make some changes, and submit a pull request. Al
 - [ ] Integrate File system tools in MacOS
 - [ ] Create more AppleScripts
 
+## Acknowledgments:
+https://github.com/chidiwilliams/GPT-Automator
+
+
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
