@@ -1,6 +1,8 @@
 # LangChain GPT VoiceAssistant for MacOS
 
-![ChatGPT-1280x720](https://github.com/Tristan296/LangChain-GPT-Voice-Assistant/assets/109927879/84517b51-4941-4ab4-b286-276ccf1c65ba)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+![alt text](https://github.com/Tristan296/LangChain-GPT-Voice-Assistant/blob/main/assistant_logo.png)
 
 ## Features
 
