@@ -15,7 +15,13 @@
 * **Internet Statistics**: Check internet speed and ping
 * **Internet History**: Check previous internet results
 * **Weather**: Get several weather metrics in chosen city
-
+* **Siri Integration**: 
+  * Create reminders
+  * Open applications
+  * Increase/reduce brightness and volume
+  * Enable/disable WIFI and Bluetooth
+  * Search the web
+  
 ## How it works:
 
 - LangchainGPT converts your audio input to text using OpenAI's Whisper. Then, it uses a LangChain Agent to choose a set of actions, including generating AppleScript (for desktop automation) and JavaScript (for browser automation) commands from your prompt using OpenAI's GPT-3 ("text-davinci-003"), and then executing the resulting script. It then uses Google Text-To-Speech (GTTS) to convert text to audio.
