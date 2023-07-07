@@ -1,3 +1,5 @@
+import re
+import time
 import numpy as np
 import openai
 import sounddevice as sd
@@ -10,10 +12,13 @@ from langchain.agents import initialize_agent
 from langchain.llms import OpenAI
 from dotenv import load_dotenv
 from langchain.agents import load_tools
+import speech_recognition as sr
+
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(os.path.dirname(SCRIPT_DIR))
 
+from skills.apple_scripts import ask_siri
 from core.commands import (computer_applescript_action,
             chrome_open_url,
             chrome_get_the_links_on_the_page,
@@ -48,23 +53,24 @@ class VoiceAssistant:
         """
         Records audio from the user and transcribes it.
         """
-        print("Listening...")
+        self.print_typing("Listening...")
+        # Create a recognizer object
+        recognizer = sr.Recognizer()
+
         # Record the audio
-        duration = 5  # Record for 3 seconds
-        fs = 44100  # Sample rate
+        duration = 5  # Record for 5 seconds
 
-        audio = sd.rec(int(duration * fs), samplerate=fs, channels=1, dtype=np.int16)
-        sd.wait()
+        with sr.Microphone() as source:
+            audio = recognizer.record(source, duration=duration)
 
-        # # Save the NumPy array to a temporary wav file
-        with tempfile.NamedTemporaryFile(delete=False, suffix=".wav") as temp_wav_file:
-            wavfile.write(temp_wav_file.name, fs, audio)
-
-            # Use the temporary wav file in the OpenAI API
-            transcript = openai.Audio.transcribe("whisper-1", temp_wav_file)
-
-        print(f"User: {transcript['text']}")
-        return transcript['text']
+        try:
+            # Perform speech recognition
+            transcript = recognizer.recognize_google(audio)
+            print(f"User: {transcript}")
+            return transcript
+        except sr.UnknownValueError:
+            print("Sorry, I couldn't understand what you said.")
+            return ""
 
     def think(self, text):
         """
@@ -89,50 +95,67 @@ class VoiceAssistant:
 
 
     def speak(self, text):
-         # Convert text to speech using gTTS
+        # Convert text to speech using gTTS
         tts = gTTS(text=text, lang='en', slow=False)
-        
+
         # Save the speech as a temporary audio file
         with tempfile.NamedTemporaryFile(delete=False, suffix=".mp3") as temp_audio:
             tts.save(temp_audio.name)
-        
+
         # Play the audio file through the speakers
         subprocess.run(["afplay", temp_audio.name])
 
+    
+    def print_typing(self, text):
+        for char in text:
+            print(char, end='', flush=True)
+            time.sleep(0.05)  # Adjust the delay time as desired
+        print()
+
     def run(self):
         while True:
-            print("""Initialising ChatGPT and Text-To-Speech...\n""")
-            print("Welcome to IntelliVoiceAI! How can I assist you? If unsure say help")
+            print("""Initialising ChatGPT, Text-To-Speech and LangChain...\n""")
+            print("How can I assist you? If unsure say help")
 
             text = self.listen()
-            formattedText = text.strip().lower()
+            formattedText = text.strip().lower() if isinstance(text, str) else ""
 
             if "goodbye" in formattedText or "bye" in formattedText:
                 print("Assistant: Goodbye! Have a great day!")
                 self.speak("Goodbye! Have a great day!")
                 break
 
-            if "list" in formattedText or "note" in formattedText: 
+            elif "list" in formattedText or "note" in formattedText: 
                 from src.skills.todo_list import todoList
                 todolist = todoList(self)
                 todolist.create_todo_list()
                 break
 
-            if "speed" in formattedText or "internet speed" in formattedText: 
+            elif "speed" in formattedText or "internet speed" in formattedText: 
                 from src.skills.internet_test import InternetSpeed, SpeedHistory
                 history_file_path = "speed_history.json"
                 speed_history = SpeedHistory(history_file_path)
                 speed = InternetSpeed(self, speed_history)
                 speed.run()
                             
-            if "weather" in formattedText:
+            elif "weather" in formattedText:
                 from src.skills.weather import Weather
                 weather = Weather(self, None)
                 weather.run()
+            
+            elif ("open" in formattedText or "reminder" in formattedText):
+                ask_siri(formattedText)
+            
+            elif re.search(r"(increase|decrease|reduce) brightness", formattedText) or re.search(r"(increase|decrease|reduce) volume", formattedText):
+                ask_siri(formattedText)
+            
+            elif re.search(r"(wifi|bluetooth|settings)", formattedText):
+                ask_siri(formattedText)
                 
-            if "exit" in formattedText or "quit" in formattedText:
+            elif "exit" in formattedText or "quit" in formattedText:
                 print("Goodbye")
                 break
 
             response = self.think(text)
             self.speak(response)
+
