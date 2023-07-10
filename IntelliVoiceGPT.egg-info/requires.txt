@@ -1,6 +1,7 @@
 numpy
-openai
 sounddevice
 scipy
-gtts
-langchain
+gTTS
+python-dotenv
+pyaudio
+SpeechRecognition

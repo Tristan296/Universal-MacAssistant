@@ -6,17 +6,13 @@ import tempfile
 import re
 import speech_recognition as sr
 from gtts import gTTS
+from dotenv import load_dotenv
 
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(os.path.dirname(SCRIPT_DIR))
 
 from skills.apple_scripts import ask_siri, open_file
-from core.commands import (computer_applescript_action,
-                           chrome_open_url,
-                           chrome_get_the_links_on_the_page,
-                           chrome_read_the_page,
-                           chrome_click_on_link)
 load_dotenv()
 
 class VoiceAssistant:

@@ -1,18 +1,17 @@
 from setuptools import setup
 
 setup(
-    name='IntelliVoiceGPT',
+    name='Universal-MacAssistant',
     version='1.0',
-    description='IntelliVoiceGPT project',
-    author='Your Name',
-    author_email='your.email@example.com',
+    description='MacAssistant project',
+    author='Tristan Norbury',
+    author_email='tristannorbury123@gmail.com',
     packages=['src'],
     install_requires=[
         'numpy',
         'sounddevice',
         'scipy',
         'gTTS',
-        'tempfile',
         'python-dotenv',
         'pyaudio',
         'SpeechRecognition'
