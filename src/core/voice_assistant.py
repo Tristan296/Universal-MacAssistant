@@ -1,16 +1,12 @@
-import re
 import time
-from dotenv import load_dotenv
-import numpy as np
-import openai
-import sounddevice as sd
-from scipy.io import wavfile
-import tempfile
-import subprocess
-from gtts import gTTS
 import os
 import sys
+import subprocess
+import tempfile
+import re
 import speech_recognition as sr
+from gtts import gTTS
+
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(os.path.dirname(SCRIPT_DIR))
@@ -25,16 +21,7 @@ load_dotenv()
 
 class VoiceAssistant:
     def __init__(self):
-        # Set your OpenAI API key
-        api_key = os.environ['OPENAI_API_KEY']
-        openai.api_key = api_key
-        # Initialize the assistant's history
-        self.history = [
-            {
-                "role": "system",
-                "content": "You are a helpful assistant. The user is English. Only speak English.",
-            }
-        ]
+      pass
 
     def listen(self):
         """
