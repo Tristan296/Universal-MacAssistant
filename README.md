@@ -1,6 +1,7 @@
 # Universal Assistant for MacOS
 
 [![GitHub Clones](https://img.shields.io/badge/dynamic/json?color=success&label=Clone&query=count&url=https://gist.githubusercontent.com/Tristan296/82e0272a21bddb472fb3feebea622050/raw/clone.json&logo=github)](https://github.com/MShawon/github-clone-count-badge)
+[![CodeQL](https://github.com/Tristan296/Universal-MacAssistant/workflows/CodeQL/badge.svg)](https://github.com/Tristan296/Universal-MacAssistant/actions?query=workflow%3ACodeQL)
 
 ![alt text](https://github.com/Tristan296/LangChain-GPT-Voice-Assistant/blob/main/assistant_logo.png)
 
