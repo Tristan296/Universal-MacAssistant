@@ -9,10 +9,12 @@ setup(
     packages=['src'],
     install_requires=[
         'numpy',
-        'openai',
         'sounddevice',
         'scipy',
-        'gtts',
-        'langchain',
+        'gTTS',
+        'tempfile',
+        'python-dotenv',
+        'pyaudio',
+        'SpeechRecognition'
     ],
 )
