@@ -1,6 +1,7 @@
-# LangChain GPT VoiceAssistant for MacOS
+# Universal Assistant for MacOS
 
 [![GitHub Clones](https://img.shields.io/badge/dynamic/json?color=success&label=Clone&query=count&url=https://gist.githubusercontent.com/Tristan296/82e0272a21bddb472fb3feebea622050/raw/clone.json&logo=github)](https://github.com/MShawon/github-clone-count-badge)
+[![CodeQL](https://github.com/Tristan296/Universal-MacAssistant/workflows/CodeQL/badge.svg)](https://github.com/Tristan296/Universal-MacAssistant/actions?query=workflow%3ACodeQL)
 
 ![alt text](https://github.com/Tristan296/LangChain-GPT-Voice-Assistant/blob/main/assistant_logo.png)
 
@@ -15,10 +16,16 @@
 * **Internet Statistics**: Check internet speed and ping
 * **Internet History**: Check previous internet results
 * **Weather**: Get several weather metrics in chosen city
-
+* **Siri Integration**: 
+  * Create reminders
+  * Open applications
+  * Increase/reduce brightness and volume
+  * Enable/disable WIFI and Bluetooth
+  * Search the web
+  
 ## How it works:
 
-- LangchainGPT converts your audio input to text using OpenAI's Whisper. Then, it uses a LangChain Agent to choose a set of actions, including generating AppleScript (for desktop automation) and JavaScript (for browser automation) commands from your prompt using OpenAI's GPT-3 ("text-davinci-003"), and then executing the resulting script. It then uses Google Text-To-Speech (GTTS) to convert text to audio.
+- MacAssistant converts your audio input to text using OpenAI's Whisper. Then, it uses a LangChain Agent to choose a set of actions, including generating AppleScript (for desktop automation) and JavaScript (for browser automation) commands from your prompt using OpenAI's GPT-3 ("text-davinci-003"), and then executing the resulting script. It then uses Google Text-To-Speech (GTTS) to convert text to audio.
 
 ## Usage
 
@@ -35,6 +42,10 @@
 - in `.env` add api key to:
 - `OPENWEATHER_API_KEY=your_key_here`
 
+### Siri:
+- To allow siri to work, please ensure 'Type to Siri' is enabled in system preferences:
+  - `Accessbility > Siri > Type to siri`
+ 
 ## Example Prompts:
 
 - Find the result of a calculation. Prompt: "What is 5 * 5?" -> It will write AppleScript to open up a calculator and type in 5 * 5.
