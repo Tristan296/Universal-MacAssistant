@@ -8,7 +8,6 @@
 ## Features
 
 * **Voice Recognition**: Listens to user's voice commands and transcribes them to text.
-* **AI Commands**: Uses LLM to segment voice commands into separate prompts, which then get executed by agent.py
 * **Text-to-Speech**: Converts the assistant's text responses into voice and speaks them out.
 * **Reminders**: Create reminders in the reminders app
 * **To-do-list**: Create to do lists in the notes app
