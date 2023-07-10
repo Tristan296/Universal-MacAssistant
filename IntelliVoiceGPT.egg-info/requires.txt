@@ -1,7 +1,0 @@
-numpy
-sounddevice
-scipy
-gTTS
-python-dotenv
-pyaudio
-SpeechRecognition
