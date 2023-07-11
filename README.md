@@ -24,7 +24,7 @@
 
 ## Usage
 
-1. Download Repository folder or git clone https://github.com/Tristan296/Universal-MacAssistant
+1. Clone this repository with `git clone https://github.com/Tristan296/Universal-MacAssistant.git`
 2. run `python setup.py install` in terminal
 3. Open terminal and run `python3 main.py`
 4. Choose from the available prompts
