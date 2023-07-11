@@ -38,14 +38,12 @@ The Universal Assistant for macOS is a powerful voice-enabled assistant that pro
 - "Where is the nearest cafe?" to use Siri to find the nearest cafe.
 
 ## Contribution
-Contributions to this project are welcome! Feel free to fork the project, make changes, and submit a pull request. Please refer to the CONTRIBUTING.md file for guidelines on contributing.
-
+Contributions to this project are welcome! Feel free to fork the project, make changes, and submit a pull request. 
 
 ## TODO:
 
 - [ ] Integrate File system tools in MacOS
-- [ ] Create more AppleScripts
- - In progress
+- [x] Create more AppleScripts 
 
 ## License
 
