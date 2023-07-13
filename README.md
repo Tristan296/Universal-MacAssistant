@@ -22,7 +22,7 @@ The Universal Assistant for macOS is a powerful voice-enabled assistant that pro
 ## Usage
 
 1. Clone this repository using git clone https://github.com/Tristan296/Universal-MacAssistant.git
-2. Run python setup.py install in the terminal to install the required dependencies.
+2. Run `python setup.py install` in the terminal to install the required dependencies.
 3. Open the terminal and run python3 main.py to start the assistant.
 4. Choose from the available prompts to interact with the assistant and utilize its features.
 
