@@ -1,0 +1,9 @@
+LICENSE
+README.md
+setup.py
+Universal_MacAssistant.egg-info/PKG-INFO
+Universal_MacAssistant.egg-info/SOURCES.txt
+Universal_MacAssistant.egg-info/dependency_links.txt
+Universal_MacAssistant.egg-info/requires.txt
+Universal_MacAssistant.egg-info/top_level.txt
+src/__init__.py

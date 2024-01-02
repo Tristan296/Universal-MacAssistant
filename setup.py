@@ -15,6 +15,7 @@ setup(
         'python-dotenv',
         'pyaudio',
         'SpeechRecognition',
-        'pocketsphinx'
+        'pocketsphinx',
+        'speedtest-cli'
     ],
 )

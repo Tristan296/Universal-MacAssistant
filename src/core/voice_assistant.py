@@ -13,6 +13,7 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(os.path.dirname(SCRIPT_DIR))
 
 from skills.apple_scripts import ask_siri, open_file
+from skills.help import help
 load_dotenv()
 
 class VoiceAssistant:
@@ -92,6 +93,9 @@ class VoiceAssistant:
 
                 weather = Weather(self, None)
                 weather.run()
+
+            elif "help" in formattedText:
+                help()
 
             elif (("open" in formattedText and "app" in formattedText) or "reminder" in formattedText):
                 ask_siri(formattedText)
