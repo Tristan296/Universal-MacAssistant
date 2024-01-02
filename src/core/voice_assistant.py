@@ -35,7 +35,7 @@ class VoiceAssistant:
 
         try:
             # Perform speech recognition
-            transcript = recognizer.recognize_google(audio)
+            transcript = recognizer.recognize_sphinx(audio)
             print(f"User: {transcript}")
             return transcript
         except sr.UnknownValueError:
@@ -61,7 +61,7 @@ class VoiceAssistant:
 
     def run(self):
         while True:
-            print("""Initialising ChatGPT, Text-To-Speech...\n""")
+            print("\n" * 30, """Initialising MacAssistant...\n""")
             print("How can I assist you? If unsure, say help")
 
             text = self.listen()

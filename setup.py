@@ -14,6 +14,7 @@ setup(
         'gTTS',
         'python-dotenv',
         'pyaudio',
-        'SpeechRecognition'
+        'SpeechRecognition',
+        'pocketsphinx'
     ],
 )
